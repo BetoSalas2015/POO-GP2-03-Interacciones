@@ -14,11 +14,12 @@ public class Empleado
     private int numeroEmpleado;
     private Date ingreso;
     private double salario;
+    private static int idEmpleado = 100;
     
     public Empleado(String nom, String ap, double sal, int dia, int mes, int año) {
         nombre = new String(nom);
         apellido = new String(ap);
-        numeroEmpleado = 100;
+        numeroEmpleado = idEmpleado++;
         ingreso = new Date(año, mes, dia);
         setSalario(sal);
     }
@@ -54,7 +55,13 @@ public class Empleado
                 " Ingreso: " + ingreso.toString() + ", Salario: " + 
                 Double.toString(salario);
     }
+
+    public static void main(String arrgs[]) {
+        Empleado empleado1 = new Empleado("Roberto", "Salazar", 800.00, 1, 1, 2000);
+        System.out.println( empleado1.toString() );
+    }
 }
+
 
 
 
